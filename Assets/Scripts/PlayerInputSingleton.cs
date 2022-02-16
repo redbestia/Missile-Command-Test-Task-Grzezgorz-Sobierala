@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MissileCommand
@@ -7,13 +5,18 @@ namespace MissileCommand
     public class PlayerInputSingleton : MonoBehaviour
     {
         [SerializeField] private LayerMask cursorCatcher;
+        [SerializeField] private KeyCode ShootButton = KeyCode.Space;
+ 
+        public Vector3 CursorPositionInWorld { get => cursorPositionInWorld; }
+        private Vector3 cursorPositionInWorld = Vector3.zero;
 
-        [HideInInspector] public Vector3 CursorPositionInWorld { get => cursorPositionInWorld;  }
-        private Vector3 cursorPositionInWorld;
+        public bool IsShootButtonPressed { get => isShootButtonPressed; }
+        private bool isShootButtonPressed = false;
 
-        public static PlayerInputSingleton Instance { get => instance;  }
+        public static PlayerInputSingleton Instance { get => instance; }
         private static PlayerInputSingleton instance;
 
+        #region MonoBehaviour
         private void Awake()
         {
             SetThisInstanceToStaticIfInstaneIsNull();
@@ -22,7 +25,12 @@ namespace MissileCommand
         private void Update()
         {
             cursorPositionInWorld = GetCursorPosition();
+
+            isShootButtonPressed = Input.GetKeyDown(ShootButton);
         }
+
+        #endregion
+
         private void SetThisInstanceToStaticIfInstaneIsNull()
         {
             if (instance == null)
