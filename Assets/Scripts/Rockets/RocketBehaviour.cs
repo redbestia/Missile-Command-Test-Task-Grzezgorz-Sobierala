@@ -12,5 +12,8 @@ namespace MissileCommand
             Instantiate(boomPrefab, transform.position, boomPrefab.transform.rotation);
             Destroy(this.gameObject);
         }
+
+        public abstract void Shoot(GameObject rocketPrefab, Vector3 startPosition, Quaternion startRotation,
+            Vector3 endPosition, float speed, Transform newParent);
     }
 }

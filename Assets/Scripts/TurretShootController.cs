@@ -7,6 +7,7 @@ namespace MissileCommand
     {
         [SerializeField] private List<Transform> ListOfTurrets;
         [SerializeField] private GameObject rocketPrefab;
+        [SerializeField] private Transform allyRocketParent;
         [SerializeField] private float rocketSpeed = 100;
         #region MonoBehaviour
 
@@ -40,12 +41,9 @@ namespace MissileCommand
             nearestTurretToCursor.transform.LookAt(PlayerInputSingleton.Instance.CursorPositionInWorld,
                 Vector3.left);
 
-            var spawnedRocket = Instantiate(rocketPrefab, nearestTurretToCursor.position, 
-                nearestTurretToCursor.rotation);
-
-            spawnedRocket.GetComponent<AllyRocket>().Shoot(nearestTurretToCursor.position,
-                nearestTurretToCursor.rotation, PlayerInputSingleton.Instance.CursorPositionInWorld, rocketSpeed);
-
+            rocketPrefab.GetComponent<AllyRocket>().Shoot(rocketPrefab, nearestTurretToCursor.position,
+                nearestTurretToCursor.rotation, PlayerInputSingleton.Instance.CursorPositionInWorld, 
+                rocketSpeed, allyRocketParent);
         }
     }
 }

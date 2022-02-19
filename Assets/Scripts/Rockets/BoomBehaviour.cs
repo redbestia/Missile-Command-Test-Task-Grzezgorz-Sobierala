@@ -52,6 +52,8 @@ namespace MissileCommand
                     diffreceBerweenStartSizeAndEnd, diffreceBerweenStartSizeAndEnd);
 
             transform.localScale = new Vector3(startBoomSize, startBoomSize, startBoomSize);
+
+            transform.SetParent(GameObject.FindGameObjectWithTag(Tags.BoomParentTag).transform);
         }
 
         void Explosion()
