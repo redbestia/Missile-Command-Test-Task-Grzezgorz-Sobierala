@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Boom
   - BoomParent
+  - RocketParent
   layers:
   - Default
   - TransparentFX

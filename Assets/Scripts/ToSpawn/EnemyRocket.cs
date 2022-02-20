@@ -3,16 +3,9 @@ using System.Collections.Generic;
 
 namespace MissileCommand
 {
-    public class EnemyRocket : RocketBehaviour 
+    public class EnemyRocket : LaunchableGameObject 
     {
         [SerializeField] List<string> listOfTagsThatMakesTheRocketBoom;
-
-        private new Rigidbody rigidbody;
-
-        private void Awake()
-        {
-            rigidbody = GetComponent<Rigidbody>();
-        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -22,18 +15,7 @@ namespace MissileCommand
             }
         }
 
-        /// <summary>
-        /// Shoot rocket in z direction of rocket
-        /// </summary>
-        public override void Shoot(GameObject rocketPrefab, Vector3 startPosition, Quaternion startRotation,
-            Vector3 endPosition, float speed, Transform newParent)
-        {
-            var spawnerRocket = Instantiate(rocketPrefab, startPosition, startRotation, newParent);
-
-            spawnerRocket.GetComponent<EnemyRocket>().SetPlaceOfBoomAndShoot(speed);
-        }
-
-        void SetPlaceOfBoomAndShoot(float speed)
+        public override void LaunchInDirection(Vector3 startPosition, Vector3 endPosition, float speed)
         {
             rigidbody.AddRelativeForce(Vector3.forward * speed);
         }

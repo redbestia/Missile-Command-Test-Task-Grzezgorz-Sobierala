@@ -7,5 +7,6 @@ namespace MissileCommand
         public const string GroundTag = "Ground";
         public const string BoomTag = "Boom";
         public const string BoomParentTag = "BoomParent";
+        public const string RocketParentTag = "RocketParent";
     }
 }

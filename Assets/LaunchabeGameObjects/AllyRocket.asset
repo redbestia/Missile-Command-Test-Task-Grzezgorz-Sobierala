@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52db59983762f8b49ba8e99a5df42a42, type: 3}
+  m_Name: AllyRocket
+  m_EditorClassIdentifier: 
+  gameObjectToLunch: {fileID: 8785795036617948160, guid: f09b4bdfdd9221a429a6f657cfe593ca, type: 3}

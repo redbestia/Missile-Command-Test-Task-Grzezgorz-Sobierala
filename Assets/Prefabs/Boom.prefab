@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8266870471802595573}
   - component: {fileID: 8266870471802595572}
   - component: {fileID: 8266870471802595568}
+  - component: {fileID: 8449340964836706375}
   m_Layer: 0
   m_Name: Boom
   m_TagString: Boom
@@ -111,3 +112,19 @@ MonoBehaviour:
   startBoomSize: 0.75
   endBoomSize: 2.25
   timeFormStartSizeToMax: 1
+--- !u!54 &8449340964836706375
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266870471802595579}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
