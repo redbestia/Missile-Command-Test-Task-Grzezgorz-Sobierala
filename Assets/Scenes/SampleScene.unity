@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: bd5c358b02ffe6e48b5a0c18de037af4, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -417,7 +417,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 199364069}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1600349034}
+        m_TargetAssemblyTypeName: MissileCommand.SceneControler, Assembly-CSharp
+        m_MethodName: RestartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &199364069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,8 +1659,8 @@ MonoBehaviour:
   enemyParent: {fileID: 578324590}
   spawnArea: {fileID: 2135061070}
   targetArea: {fileID: 652041154}
-  amountOfLaunches: 10
-  speed: 130
+  amountOfLaunches: 20
+  speed: 110
   maxTimeBeetwenLaunches: 1.2
   minTimeBeetwenLaunches: 0.5
 --- !u!114 &1205610217 stripped
@@ -2066,9 +2078,9 @@ MonoBehaviour:
   spawnArea: {fileID: 2013914288}
   targetArea: {fileID: 277090532}
   amountOfLaunches: 2
-  speed: 130
+  speed: 80
   maxTimeBeetwenLaunches: 15
-  minTimeBeetwenLaunches: 5
+  minTimeBeetwenLaunches: 7
 --- !u!114 &1561807626 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6566759277157473590, guid: e7ab56cc95c6c574dab632b490c698a4, type: 3}
@@ -2226,7 +2238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361958e526f933341898dddf3e5b0d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefenceSystem: {fileID: 871433639}
+  AimSystem: {fileID: 2047656912}
   WinUI: {fileID: 1059696877}
   LoseUI: {fileID: 41303480}
 --- !u!1 &1621311102
@@ -2311,7 +2323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1621311105}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1600349034}
+        m_TargetAssemblyTypeName: MissileCommand.SceneControler, Assembly-CSharp
+        m_MethodName: RestartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621311105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2535,6 +2559,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2047656912}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1675534057
 MonoBehaviour:
@@ -3181,7 +3217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2047656913
 Transform:
   m_ObjectHideFlags: 0

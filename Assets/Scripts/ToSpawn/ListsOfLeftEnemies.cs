@@ -6,7 +6,7 @@ namespace MissileCommand
 {
     public static class ListsOfLeftEnemies
     {
-        public static List<LaunchableGameObject> ListOfLeftEnemies = new List<LaunchableGameObject>();
-        public static List<EnemySpawner> ListOfLeftEnemySpawners = new List<EnemySpawner>();
+        public static List<Enemy> ListOfLeftEnemies = new List<Enemy>();
+        public static List<EnemySpawner> ListOfLeftEnemySpawnersWithAmmo = new List<EnemySpawner>();
     }
 }

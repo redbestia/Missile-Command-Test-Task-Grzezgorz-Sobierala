@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MissileCommand
 {
-    public class EnemyRocket : LaunchableGameObject 
+    public class EnemyRocket : Enemy 
     {
         [SerializeField] List<string> listOfTagsThatMakesTheRocketBoom;
 

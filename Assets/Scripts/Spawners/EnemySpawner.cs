@@ -16,11 +16,24 @@ namespace MissileCommand
         [SerializeField] float maxTimeBeetwenLaunches = 0.5f;
         [SerializeField] float minTimeBeetwenLaunches = 0.2f;
 
+        public static System.Action<int> OnSpawnerOutOfAmmo = delegate { };
+
         private float timeOfNextLaunch=0;
+
+        private void Awake()
+        {
+            ListsOfLeftEnemies.ListOfLeftEnemySpawnersWithAmmo.Add(this);
+        }
 
         private void Update()
         {
             LauchingUntillHaveAmmo();
+        }
+
+        private void OnDestroy()
+        {
+            //ListsOfLeftEnemies.ListOfLeftEnemySpawnersWithAmmo.Remove(this);
+            //OnSpawnerOutOfAmmo.Invoke(ListsOfLeftEnemies.ListOfLeftEnemySpawnersWithAmmo.Count);
         }
 
         public void SetTargetArea(Transform newTargetArea)
@@ -63,6 +76,11 @@ namespace MissileCommand
                 startRotation, targetPosition, speed, enemyParent);
 
             amountOfLaunches--;
+            if (amountOfLaunches == 0)
+            {
+                ListsOfLeftEnemies.ListOfLeftEnemySpawnersWithAmmo.Remove(this);
+                OnSpawnerOutOfAmmo.Invoke(ListsOfLeftEnemies.ListOfLeftEnemySpawnersWithAmmo.Count);
+            }
         }
 
         #region SpawnAndTargetPoints

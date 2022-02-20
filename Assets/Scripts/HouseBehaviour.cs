@@ -14,15 +14,11 @@ namespace MissileCommand
         {
             ListOfHouseBehaviour.Add(this);
         }
-
-        private void OnDestroy()
-        {
-            ListOfHouseBehaviour.RemoveAt(ListOfHouseBehaviour.IndexOf(this));
-        }
-
         public void OnBoomTriggerEnter()
         {
+            ListOfHouseBehaviour.Remove(this);
             OnHouseBombed.Invoke(ListOfHouseBehaviour.Count);
+
             Destroy(gameObject);
         }
 

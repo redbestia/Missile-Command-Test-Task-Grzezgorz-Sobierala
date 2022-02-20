@@ -177,6 +177,6 @@ MonoBehaviour:
   spawnArea: {fileID: 7251455805536999851}
   targetArea: {fileID: 0}
   amountOfLaunches: 10
-  speed: 100
-  maxTimeBeetwenLaunches: 2
-  minTimeBeetwenLaunches: 1
+  speed: 110
+  maxTimeBeetwenLaunches: 3
+  minTimeBeetwenLaunches: 1.5

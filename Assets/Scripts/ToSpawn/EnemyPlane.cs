@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MissileCommand
 {
-    public class EnemyPlane : LaunchableGameObject , IDamagedByBoom
+    public class EnemyPlane : Enemy , IDamagedByBoom
     {
         [SerializeField] EnemySpawner spawnerInPlane;
 
@@ -27,6 +27,10 @@ namespace MissileCommand
 
         public void OnBoomTriggerEnter()
         {
+            ListsOfLeftEnemies.ListOfLeftEnemySpawnersWithAmmo.Remove(spawnerInPlane);
+            EnemySpawner.OnSpawnerOutOfAmmo.Invoke(
+                ListsOfLeftEnemies.ListOfLeftEnemySpawnersWithAmmo.Count);
+
             MakeBoom();
         }
 

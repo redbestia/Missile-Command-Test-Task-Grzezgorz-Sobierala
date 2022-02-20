@@ -14,7 +14,7 @@ namespace MissileCommand
             GetRigidbody();
         }
 
-        protected void MakeBoom()
+        protected virtual void MakeBoom()
         {
             Instantiate(boomPrefab, transform.position, boomPrefab.transform.rotation);
             Destroy(this.gameObject);
